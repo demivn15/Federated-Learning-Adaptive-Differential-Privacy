@@ -27,7 +27,7 @@ class StructuralPriorExtractor(nn.Module):
 
 class VenomAttack:
     def __init__(self, model, data_shape, num_classes, device='cpu', 
-                 feature_layer_name='layer4', lr=0.05, max_iterations=200):
+                 feature_layer_name='backbone.layer4', lr=0.05, max_iterations=100):
         """
         Initializes the Venom Liquid Diffusion-Guided Gradient Inversion Attack.
         
@@ -48,103 +48,86 @@ class VenomAttack:
         self.lr = lr
         self.max_iterations = max_iterations
         
-        # Setup SPE feature hook
+        # Setup SPE feature hook with robust matching
         self.feature_layer_name = feature_layer_name
         self.extracted_features = None
         self._register_hooks()
         
-        # Instantiate SPE helper module
-        # Assumes standard ResNet feature dimension (e.g., 512 for ResNet-18 layer4)
         self.spe_module = StructuralPriorExtractor(feature_dim=512).to(device)
 
     def _register_hooks(self):
-        """Registers a forward hook to extract latent feature activations."""
+        """Registers a forward hook to extract latent feature activations robustly."""
+        hook_registered = False
         def hook(module, input, output):
             self.extracted_features = output
         
         for name, layer in self.model.named_modules():
-            if name == self.feature_layer_name:
+            if self.feature_layer_name in name or name.endswith(self.feature_layer_name):
                 layer.register_forward_hook(hook)
+                hook_registered = True
                 break
+        
+        if not hook_registered:
+            # Fallback to last convolutional layer if specific name not found
+            for name, layer in reversed(list(self.model.named_modules())):
+                if isinstance(layer, nn.Conv2d):
+                    layer.register_forward_hook(hook)
+                    break
 
     def _structural_prior_loss(self, dummy_features, target_gradient):
-        """
-        Computes energy-based structural matching loss between dummy feature 
-        maps and the energy signature of the intercepted gradient update.
-        """
+        """Computes energy-based structural matching loss."""
+        if dummy_features is None:
+            return torch.tensor(0.0, device=self.device)
         dummy_energy = self.spe_module(dummy_features)
-        # Approximate target gradient norm signature as energy prior target
         target_norm = torch.norm(target_gradient[-2], p=2) if len(target_gradient) > 1 else torch.norm(target_gradient[0])
         prior_loss = F.mse_loss(dummy_energy, torch.full_like(dummy_energy, target_norm.item()))
         return prior_loss
 
     def reconstruct(self, target_gradients, diffusion_prior_net=None):
         """
-        Executes Venom's Liquid Diffusion-Guided Inversion.
-        
-        Args:
-            target_gradients (list): Intercepted DP-perturbed updates \tilde{g}_t^k.
-            diffusion_prior_net (nn.Module, optional): Pre-trained generative/diffusion 
-                                                       prior for guided manifold sampling.
-            
-        Returns:
-            tuple: (reconstructed_image, reconstructed_label)
+        Executes Venom's Liquid Diffusion-Guided Inversion with smooth sigmoid activation
+        to prevent flat gradient regions during clamping.
         """
-        # 1. Initialize latent representation z (or image directly if diffusion prior is None)
         if diffusion_prior_net is not None:
             latent_z = torch.randn((1, 128), device=self.device, requires_grad=True)
             optimizer = optim.Adam([latent_z], lr=self.lr)
         else:
-            dummy_data = torch.randn(self.data_shape, device=self.device, requires_grad=True)
-            optimizer = optim.Adam([dummy_data], lr=self.lr)
+            # Initialize with small normal noise for smooth sigmoid scaling
+            dummy_latent = torch.randn(self.data_shape, device=self.device, requires_grad=True) * 0.1
+            optimizer = optim.Adam([dummy_latent], lr=self.lr)
 
         dummy_label = torch.randn((1, self.num_classes), device=self.device, requires_grad=True)
         label_optimizer = optim.Adam([dummy_label], lr=self.lr)
 
-        # 2. Diffusion-Guided Recovery Optimization Loop
         for iters in range(self.max_iterations):
             optimizer.zero_grad()
             label_optimizer.zero_grad()
 
-            # Map latent z to image via Diffusion/Generative prior if available
             if diffusion_prior_net is not None:
                 current_image = diffusion_prior_net(latent_z)
             else:
-                current_image = dummy_data
+                # Use sigmoid to map unconstrained latent space to [0, 1] without flat clamping gradients
+                current_image = torch.sigmoid(dummy_latent)
 
-            # Clamp intermediate generation to valid normalized bounds [0, 1]
-            current_image_clamped = torch.clamp(current_image, 0.0, 1.0)
-
-            # Forward pass through model
-            pred = self.model(current_image_clamped)
+            pred = self.model(current_image)
             dummy_loss = F.cross_entropy(pred, F.softmax(dummy_label, dim=-1))
 
-            # Compute dummy gradients
             dummy_grads = torch.autograd.grad(dummy_loss, self.model.parameters(), create_graph=True)
 
-            # Primary Gradient Matching Loss
             grad_matching_loss = 0.0
             for dg, tg in zip(dummy_grads, target_gradients):
                 if tg is not None:
                     grad_matching_loss += F.mse_loss(dg, tg)
 
-            # Structural Prior Energy Loss (SPE component)
-            spe_loss = 0.0
-            if self.extracted_features is not None:
-                spe_loss = self._structural_prior_loss(self.extracted_features, target_gradients)
+            spe_loss = self._structural_prior_loss(self.extracted_features, target_gradients)
 
-            # Total Guided Loss
             total_loss = grad_matching_loss + 0.1 * spe_loss
             total_loss.backward()
 
             optimizer.step()
             label_optimizer.step()
 
-            if iters % 50 == 0:
-                print(f"Venom Iteration {iters:03d} | Match Loss: {grad_matching_loss.item():.4f} | SPE Loss: {spe_loss.item() if isinstance(spe_loss, torch.Tensor) else spe_loss:.4f}")
-
-        # Final reconstructed output
-        final_image = diffusion_prior_net(latent_z).detach() if diffusion_prior_net is not None else dummy_data.detach()
+        final_image = diffusion_prior_net(latent_z).detach() if diffusion_prior_net is not None else torch.sigmoid(dummy_latent).detach()
         reconstructed_label = torch.argmax(dummy_label, dim=-1).detach()
 
-        return torch.clamp(final_image, 0.0, 1.0), reconstructed_label
+        return final_image, reconstructed_label

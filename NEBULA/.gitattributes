@@ -1,0 +1,16 @@
+* text=auto eol=lf
+*.sh text eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.zip binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+# Preserve the exact bytes of archived evidence and hash-checked migration fixtures.
+/results/** -text
+/tests/fixtures/** -text
+/archive/** -text
+/provenance/validation/** -text

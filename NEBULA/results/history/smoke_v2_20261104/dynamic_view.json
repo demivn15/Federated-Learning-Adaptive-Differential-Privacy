@@ -1,0 +1,441 @@
+{
+  "scenario": {
+    "name": "smoke_dynamic",
+    "status": "completed",
+    "title": "smoke_dynamic"
+  },
+  "protocol": "project2-public-evaluation-v2",
+  "execution": "Standalone CPU integration smoke test, not a NEBULA network/container run",
+  "manifest": {
+    "protocol": "project2-public-evaluation-v2",
+    "dataset": "WDBC",
+    "seed": 42,
+    "label_mapping": {
+      "0": "malignant",
+      "1": "benign"
+    },
+    "training_records": 364,
+    "public_validation_records": 91,
+    "final_test_records": 114,
+    "iid": false,
+    "dirichlet_alpha": 0.5,
+    "clients": [
+      {
+        "participant": 1,
+        "records": 17,
+        "malignant": 1,
+        "benign": 16
+      },
+      {
+        "participant": 2,
+        "records": 55,
+        "malignant": 52,
+        "benign": 3
+      },
+      {
+        "participant": 3,
+        "records": 292,
+        "malignant": 83,
+        "benign": 209
+      }
+    ],
+    "privacy_scope": "Record-level training accounting conditional on public fixed synthetic allocation and sizes. No hospital-level or full deployment guarantee.",
+    "normalization": "StandardScaler fitted only on the 91 designated public calibration records",
+    "execution": "Standalone CPU integration smoke test, not a NEBULA network/container run"
+  },
+  "dp": {
+    "enabled": true,
+    "mode": "dynamic",
+    "noise_multiplier": 1.0,
+    "noise_end": 0.7,
+    "max_grad_norm": 1.0,
+    "target_epsilon": 8.0,
+    "target_delta": 1e-05,
+    "accountant": "rdp",
+    "secure_mode": false,
+    "poisson_sampling": true,
+    "clipping": "flat"
+  },
+  "privacy": [
+    {
+      "schema": 2,
+      "kind": "privacy",
+      "participant": 1,
+      "timestamp": 1793815313.2266104,
+      "round": 1,
+      "complete": true,
+      "mode": "dynamic",
+      "epsilon": 3.620869174049883,
+      "epsilon_limit": 8.0,
+      "delta": 1e-05,
+      "sigma": 1.26028825378418,
+      "clip": 1.0,
+      "sample_rate": 0.3333333333333333,
+      "cumulative_steps": 3,
+      "secure_rng": false,
+      "noise_schedule": [
+        1.26028825378418,
+        1.071245015716553,
+        0.8822017776489259
+      ],
+      "scope": "Conditional record-level training accountant, fixed public allocation. No hospital-level guarantee."
+    },
+    {
+      "schema": 2,
+      "kind": "privacy",
+      "participant": 2,
+      "timestamp": 1793815313.5231857,
+      "round": 1,
+      "complete": true,
+      "mode": "dynamic",
+      "epsilon": 3.482081122561179,
+      "epsilon_limit": 8.0,
+      "delta": 1e-05,
+      "sigma": 1.0769998168945312,
+      "clip": 1.0,
+      "sample_rate": 0.14285714285714285,
+      "cumulative_steps": 7,
+      "secure_rng": false,
+      "noise_schedule": [
+        1.0769998168945312,
+        0.9154498443603515,
+        0.7538998718261718
+      ],
+      "scope": "Conditional record-level training accountant, fixed public allocation. No hospital-level guarantee."
+    },
+    {
+      "schema": 2,
+      "kind": "privacy",
+      "participant": 3,
+      "timestamp": 1793815313.8661802,
+      "round": 1,
+      "complete": true,
+      "mode": "dynamic",
+      "epsilon": 2.8536942905677782,
+      "epsilon_limit": 8.0,
+      "delta": 1e-05,
+      "sigma": 0.8395313568115235,
+      "clip": 1.0,
+      "sample_rate": 0.02702702702702703,
+      "cumulative_steps": 37,
+      "secure_rng": false,
+      "noise_schedule": [
+        0.8395313568115235,
+        0.713601653289795,
+        0.5876719497680664
+      ],
+      "scope": "Conditional record-level training accountant, fixed public allocation. No hospital-level guarantee."
+    },
+    {
+      "schema": 2,
+      "kind": "privacy",
+      "participant": 1,
+      "timestamp": 1793815314.320222,
+      "round": 2,
+      "complete": true,
+      "mode": "dynamic",
+      "epsilon": 5.522021609641175,
+      "epsilon_limit": 8.0,
+      "delta": 1e-05,
+      "sigma": 1.071245015716553,
+      "clip": 1.0,
+      "sample_rate": 0.3333333333333333,
+      "cumulative_steps": 6,
+      "secure_rng": false,
+      "noise_schedule": [
+        1.26028825378418,
+        1.071245015716553,
+        0.8822017776489259
+      ],
+      "scope": "Conditional record-level training accountant, fixed public allocation. No hospital-level guarantee."
+    },
+    {
+      "schema": 2,
+      "kind": "privacy",
+      "participant": 2,
+      "timestamp": 1793815314.6796646,
+      "round": 2,
+      "complete": true,
+      "mode": "dynamic",
+      "epsilon": 5.290928693482559,
+      "epsilon_limit": 8.0,
+      "delta": 1e-05,
+      "sigma": 0.9154498443603515,
+      "clip": 1.0,
+      "sample_rate": 0.14285714285714285,
+      "cumulative_steps": 14,
+      "secure_rng": false,
+      "noise_schedule": [
+        1.0769998168945312,
+        0.9154498443603515,
+        0.7538998718261718
+      ],
+      "scope": "Conditional record-level training accountant, fixed public allocation. No hospital-level guarantee."
+    },
+    {
+      "schema": 2,
+      "kind": "privacy",
+      "participant": 3,
+      "timestamp": 1793815315.0277364,
+      "round": 2,
+      "complete": true,
+      "mode": "dynamic",
+      "epsilon": 4.518832450808188,
+      "epsilon_limit": 8.0,
+      "delta": 1e-05,
+      "sigma": 0.713601653289795,
+      "clip": 1.0,
+      "sample_rate": 0.02702702702702703,
+      "cumulative_steps": 74,
+      "secure_rng": false,
+      "noise_schedule": [
+        0.8395313568115235,
+        0.713601653289795,
+        0.5876719497680664
+      ],
+      "scope": "Conditional record-level training accountant, fixed public allocation. No hospital-level guarantee."
+    },
+    {
+      "schema": 2,
+      "kind": "privacy",
+      "participant": 1,
+      "timestamp": 1793815315.6921465,
+      "round": 3,
+      "complete": true,
+      "mode": "dynamic",
+      "epsilon": 7.942159010090652,
+      "epsilon_limit": 8.0,
+      "delta": 1e-05,
+      "sigma": 0.8822017776489259,
+      "clip": 1.0,
+      "sample_rate": 0.3333333333333333,
+      "cumulative_steps": 9,
+      "secure_rng": false,
+      "noise_schedule": [
+        1.26028825378418,
+        1.071245015716553,
+        0.8822017776489259
+      ],
+      "scope": "Conditional record-level training accountant, fixed public allocation. No hospital-level guarantee."
+    },
+    {
+      "schema": 2,
+      "kind": "privacy",
+      "participant": 2,
+      "timestamp": 1793815316.2860527,
+      "round": 3,
+      "complete": true,
+      "mode": "dynamic",
+      "epsilon": 7.908734081689812,
+      "epsilon_limit": 8.0,
+      "delta": 1e-05,
+      "sigma": 0.7538998718261718,
+      "clip": 1.0,
+      "sample_rate": 0.14285714285714285,
+      "cumulative_steps": 21,
+      "secure_rng": false,
+      "noise_schedule": [
+        1.0769998168945312,
+        0.9154498443603515,
+        0.7538998718261718
+      ],
+      "scope": "Conditional record-level training accountant, fixed public allocation. No hospital-level guarantee."
+    },
+    {
+      "schema": 2,
+      "kind": "privacy",
+      "participant": 3,
+      "timestamp": 1793815316.8009648,
+      "round": 3,
+      "complete": true,
+      "mode": "dynamic",
+      "epsilon": 7.474457654199743,
+      "epsilon_limit": 8.0,
+      "delta": 1e-05,
+      "sigma": 0.5876719497680664,
+      "clip": 1.0,
+      "sample_rate": 0.02702702702702703,
+      "cumulative_steps": 111,
+      "secure_rng": false,
+      "noise_schedule": [
+        0.8395313568115235,
+        0.713601653289795,
+        0.5876719497680664
+      ],
+      "scope": "Conditional record-level training accountant, fixed public allocation. No hospital-level guarantee."
+    }
+  ],
+  "evaluations": [
+    {
+      "schema": 2,
+      "kind": "evaluation",
+      "participant": 0,
+      "timestamp": 1793815313.8781848,
+      "round": 1,
+      "round_seconds": 1.1161167999998725,
+      "validation": {
+        "records": 91,
+        "accuracy": 0.6263736263736264,
+        "malignant_recall": 0.0,
+        "malignant_f1": 0.0,
+        "roc_auc": 0.8292053663570691,
+        "confusion_matrix": [
+          [
+            0,
+            34
+          ],
+          [
+            0,
+            57
+          ]
+        ],
+        "class_order": [
+          "malignant",
+          "benign"
+        ]
+      }
+    },
+    {
+      "schema": 2,
+      "kind": "evaluation",
+      "participant": 0,
+      "timestamp": 1793815315.044691,
+      "round": 2,
+      "round_seconds": 1.153643000000102,
+      "validation": {
+        "records": 91,
+        "accuracy": 0.6263736263736264,
+        "malignant_recall": 0.0,
+        "malignant_f1": 0.0,
+        "roc_auc": 0.9324045407636739,
+        "confusion_matrix": [
+          [
+            0,
+            34
+          ],
+          [
+            0,
+            57
+          ]
+        ],
+        "class_order": [
+          "malignant",
+          "benign"
+        ]
+      }
+    },
+    {
+      "schema": 2,
+      "kind": "evaluation",
+      "participant": 0,
+      "timestamp": 1793815316.8209643,
+      "round": 3,
+      "round_seconds": 1.7579070000001593,
+      "validation": {
+        "records": 91,
+        "accuracy": 0.6263736263736264,
+        "malignant_recall": 0.0,
+        "malignant_f1": 0.0,
+        "roc_auc": 0.9654282765737874,
+        "confusion_matrix": [
+          [
+            0,
+            34
+          ],
+          [
+            0,
+            57
+          ]
+        ],
+        "class_order": [
+          "malignant",
+          "benign"
+        ]
+      },
+      "final_test": {
+        "records": 114,
+        "accuracy": 0.631578947368421,
+        "malignant_recall": 0.0,
+        "malignant_f1": 0.0,
+        "roc_auc": 0.9788359788359788,
+        "confusion_matrix": [
+          [
+            0,
+            42
+          ],
+          [
+            0,
+            72
+          ]
+        ],
+        "class_order": [
+          "malignant",
+          "benign"
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "accounting_complete": true,
+  "epsilon_max": 7.942159010090652,
+  "expected_clients": [
+    1,
+    2,
+    3
+  ],
+  "rounds": 3,
+  "final_test": {
+    "records": 114,
+    "accuracy": 0.631578947368421,
+    "malignant_recall": 0.0,
+    "malignant_f1": 0.0,
+    "roc_auc": 0.9788359788359788,
+    "confusion_matrix": [
+      [
+        0,
+        42
+      ],
+      [
+        0,
+        72
+      ]
+    ],
+    "class_order": [
+      "malignant",
+      "benign"
+    ]
+  },
+  "comparison_key": {
+    "protocol": "project2-public-evaluation-v2",
+    "execution": "Standalone CPU integration smoke test, not a NEBULA network/container run",
+    "seed": 42,
+    "iid": false,
+    "alpha": 0.5,
+    "rounds": 3,
+    "epochs": 1,
+    "model": "MLP",
+    "clients": [
+      {
+        "participant": 1,
+        "records": 17,
+        "malignant": 1,
+        "benign": 16
+      },
+      {
+        "participant": 2,
+        "records": 55,
+        "malignant": 52,
+        "benign": 3
+      },
+      {
+        "participant": 3,
+        "records": 292,
+        "malignant": 83,
+        "benign": 209
+      }
+    ]
+  },
+  "scope": "Conditional record-level training accounting with fixed public synthetic allocation and sizes. No hospital-level guarantee or clinical validation.",
+  "rng": "Experimental RNG, not cryptographically secure",
+  "interpretation": "Complete training accounting"
+}

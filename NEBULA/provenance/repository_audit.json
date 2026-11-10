@@ -1,0 +1,11 @@
+{
+  "result": "PASS",
+  "scope": "Git candidate inventory before writing this audit report.",
+  "local_document_links": 7,
+  "git_candidate_files": 697,
+  "total_candidate_bytes": 38765137,
+  "largest_file_bytes": 3912489,
+  "largest_file": "docs/_prebuilt/static/nebula-mockup.png",
+  "original_evidence_files_verified": 71,
+  "managed_runtime_files_preserved": 26
+}

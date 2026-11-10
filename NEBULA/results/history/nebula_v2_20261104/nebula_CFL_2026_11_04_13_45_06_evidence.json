@@ -1,0 +1,480 @@
+{
+  "scenario": {
+    "name": "nebula_CFL_2026_11_04_13_45_06",
+    "start_time": "04/11/2026 13:45:06",
+    "end_time": "",
+    "title": "WDBC_ADV_DINAMICA_01",
+    "description": "empty",
+    "deployment": "docker",
+    "federation": "CFL",
+    "topology": "Star",
+    "nodes": "{\"0\": {\"id\": \"0\", \"ip\": \"192.168.50.2\", \"port\": \"45001\", \"role\": \"server\", \"malicious\": false, \"proxy\": false, \"start\": true, \"neighbors\": [\"1\", \"2\", \"3\"], \"links\": [], \"attack_params\": {\"attacks\": \"No Attack\"}, \"reputation\": {\"enabled\": false, \"metrics\": {\"model_similarity\": {\"enabled\": false, \"weight\": 0}, \"num_messages\": {\"enabled\": false, \"weight\": 0}, \"model_arrival_latency\": {\"enabled\": false, \"weight\": 0}, \"fraction_parameters_changed\": {\"enabled\": false, \"weight\": 0}}, \"initial_reputation\": 0.2, \"weighting_factor\": \"dynamic\"}, \"mobility\": false}, \"1\": {\"id\": \"1\", \"ip\": \"192.168.50.3\", \"port\": \"45002\", \"role\": \"trainer\", \"malicious\": false, \"proxy\": false, \"start\": false, \"neighbors\": [\"0\"], \"links\": [], \"attack_params\": {\"attacks\": \"No Attack\"}, \"reputation\": {\"enabled\": false, \"metrics\": {\"model_similarity\": {\"enabled\": false, \"weight\": 0}, \"num_messages\": {\"enabled\": false, \"weight\": 0}, \"model_arrival_latency\": {\"enabled\": false, \"weight\": 0}, \"fraction_parameters_changed\": {\"enabled\": false, \"weight\": 0}}, \"initial_reputation\": 0.2, \"weighting_factor\": \"dynamic\"}, \"mobility\": false}, \"2\": {\"id\": \"2\", \"ip\": \"192.168.50.4\", \"port\": \"45003\", \"role\": \"trainer\", \"malicious\": false, \"proxy\": false, \"start\": false, \"neighbors\": [\"0\"], \"links\": [], \"attack_params\": {\"attacks\": \"No Attack\"}, \"reputation\": {\"enabled\": false, \"metrics\": {\"model_similarity\": {\"enabled\": false, \"weight\": 0}, \"num_messages\": {\"enabled\": false, \"weight\": 0}, \"model_arrival_latency\": {\"enabled\": false, \"weight\": 0}, \"fraction_parameters_changed\": {\"enabled\": false, \"weight\": 0}}, \"initial_reputation\": 0.2, \"weighting_factor\": \"dynamic\"}, \"mobility\": false}, \"3\": {\"id\": \"3\", \"ip\": \"192.168.50.5\", \"port\": \"45004\", \"role\": \"trainer\", \"malicious\": false, \"proxy\": false, \"start\": false, \"neighbors\": [\"0\"], \"links\": [], \"attack_params\": {\"attacks\": \"No Attack\"}, \"reputation\": {\"enabled\": false, \"metrics\": {\"model_similarity\": {\"enabled\": false, \"weight\": 0}, \"num_messages\": {\"enabled\": false, \"weight\": 0}, \"model_arrival_latency\": {\"enabled\": false, \"weight\": 0}, \"fraction_parameters_changed\": {\"enabled\": false, \"weight\": 0}}, \"initial_reputation\": 0.2, \"weighting_factor\": \"dynamic\"}, \"mobility\": false}}",
+    "nodes_graph": "{\"0\": {\"id\": \"0\", \"role\": \"server\", \"malicious\": false, \"proxy\": false, \"start\": true}, \"1\": {\"id\": \"1\", \"role\": \"trainer\", \"malicious\": false, \"proxy\": false, \"start\": false}, \"2\": {\"id\": \"2\", \"role\": \"trainer\", \"malicious\": false, \"proxy\": false, \"start\": false}, \"3\": {\"id\": \"3\", \"role\": \"trainer\", \"malicious\": false, \"proxy\": false, \"start\": false}}",
+    "n_nodes": "4",
+    "matrix": "[[0, 1, 1, 1], [1, 0, 0, 0], [1, 0, 0, 0], [1, 0, 0, 0]]",
+    "random_topology_probability": "0.5",
+    "dataset": "BreastCancer",
+    "iid": "0",
+    "partition_selection": "dirichlet",
+    "partition_parameter": "0.5",
+    "model": "MLP",
+    "agg_algorithm": "FedAvg",
+    "rounds": "3",
+    "logginglevel": "1",
+    "report_status_data_queue": "1",
+    "accelerator": "cpu",
+    "network_subnet": "172.20.0.0/16",
+    "network_gateway": "172.20.0.1",
+    "epochs": "1",
+    "attack_params": "{\"attacks\": \"No Attack\", \"poisoned_node_percent\": 0, \"round_start_attack\": 1, \"round_stop_attack\": 10, \"attack_interval\": 1}",
+    "reputation": "{\"enabled\": false, \"metrics\": {\"model_similarity\": {\"enabled\": false, \"weight\": 0}, \"num_messages\": {\"enabled\": false, \"weight\": 0}, \"model_arrival_latency\": {\"enabled\": false, \"weight\": 0}, \"fraction_parameters_changed\": {\"enabled\": false, \"weight\": 0}}, \"initial_reputation\": 0.2, \"weighting_factor\": \"dynamic\"}",
+    "random_geo": "0",
+    "latitude": "38.023522",
+    "longitude": "-1.174389",
+    "mobility": "0",
+    "mobility_type": "both",
+    "radius_federation": "500",
+    "scheme_mobility": "random",
+    "round_frequency": "1",
+    "mobile_participants_percent": "100",
+    "additional_participants": "[]",
+    "schema_additional_participants": "random",
+    "status": "completed",
+    "role": "admin",
+    "username": "ADMIN",
+    "gpu_id": "[]"
+  },
+  "protocol": "project2-public-evaluation-v2",
+  "execution": "NEBULA container scenario",
+  "manifest": {
+    "protocol": "project2-public-evaluation-v2",
+    "dataset": "WDBC",
+    "seed": 42,
+    "label_mapping": {
+      "0": "malignant",
+      "1": "benign"
+    },
+    "training_records": 364,
+    "public_validation_records": 91,
+    "final_test_records": 114,
+    "iid": false,
+    "dirichlet_alpha": 0.5,
+    "clients": [
+      {
+        "participant": 1,
+        "records": 17,
+        "malignant": 1,
+        "benign": 16
+      },
+      {
+        "participant": 2,
+        "records": 55,
+        "malignant": 52,
+        "benign": 3
+      },
+      {
+        "participant": 3,
+        "records": 292,
+        "malignant": 83,
+        "benign": 209
+      }
+    ],
+    "privacy_scope": "Record-level training accounting conditional on public fixed synthetic allocation and sizes. No hospital-level or full deployment guarantee.",
+    "normalization": "StandardScaler fitted only on the 91 designated public calibration records"
+  },
+  "dp": {
+    "enabled": true,
+    "mode": "dynamic",
+    "noise_multiplier": 1,
+    "noise_end": 0.7,
+    "max_grad_norm": 1,
+    "target_epsilon": 8,
+    "target_delta": 0.00001,
+    "accountant": "rdp",
+    "secure_mode": false,
+    "poisson_sampling": true,
+    "clipping": "flat"
+  },
+  "privacy": [
+    {
+      "schema": 2,
+      "kind": "privacy",
+      "participant": 1,
+      "timestamp": 1793818049.314317,
+      "round": 1,
+      "complete": true,
+      "mode": "dynamic",
+      "epsilon": 3.620869174049883,
+      "epsilon_limit": 8,
+      "delta": 0.00001,
+      "sigma": 1.26028825378418,
+      "clip": 1,
+      "sample_rate": 0.3333333333333333,
+      "cumulative_steps": 3,
+      "secure_rng": false,
+      "noise_schedule": [
+        1.26028825378418,
+        1.071245015716553,
+        0.8822017776489259
+      ],
+      "scope": "Conditional record-level training accountant, fixed public allocation. No hospital-level guarantee."
+    },
+    {
+      "schema": 2,
+      "kind": "privacy",
+      "participant": 2,
+      "timestamp": 1793818049.115604,
+      "round": 1,
+      "complete": true,
+      "mode": "dynamic",
+      "epsilon": 3.482081122561179,
+      "epsilon_limit": 8,
+      "delta": 0.00001,
+      "sigma": 1.0769998168945312,
+      "clip": 1,
+      "sample_rate": 0.14285714285714285,
+      "cumulative_steps": 7,
+      "secure_rng": false,
+      "noise_schedule": [
+        1.0769998168945312,
+        0.9154498443603515,
+        0.7538998718261718
+      ],
+      "scope": "Conditional record-level training accountant, fixed public allocation. No hospital-level guarantee."
+    },
+    {
+      "schema": 2,
+      "kind": "privacy",
+      "participant": 3,
+      "timestamp": 1793818049.3746915,
+      "round": 1,
+      "complete": true,
+      "mode": "dynamic",
+      "epsilon": 2.8536942905677787,
+      "epsilon_limit": 8,
+      "delta": 0.00001,
+      "sigma": 0.8395313568115235,
+      "clip": 1,
+      "sample_rate": 0.02702702702702703,
+      "cumulative_steps": 37,
+      "secure_rng": false,
+      "noise_schedule": [
+        0.8395313568115235,
+        0.713601653289795,
+        0.5876719497680664
+      ],
+      "scope": "Conditional record-level training accountant, fixed public allocation. No hospital-level guarantee."
+    },
+    {
+      "schema": 2,
+      "kind": "privacy",
+      "participant": 1,
+      "timestamp": 1793818108.9252336,
+      "round": 2,
+      "complete": true,
+      "mode": "dynamic",
+      "epsilon": 5.5220216096411745,
+      "epsilon_limit": 8,
+      "delta": 0.00001,
+      "sigma": 1.071245015716553,
+      "clip": 1,
+      "sample_rate": 0.3333333333333333,
+      "cumulative_steps": 6,
+      "secure_rng": false,
+      "noise_schedule": [
+        1.26028825378418,
+        1.071245015716553,
+        0.8822017776489259
+      ],
+      "scope": "Conditional record-level training accountant, fixed public allocation. No hospital-level guarantee."
+    },
+    {
+      "schema": 2,
+      "kind": "privacy",
+      "participant": 2,
+      "timestamp": 1793818110.77833,
+      "round": 2,
+      "complete": true,
+      "mode": "dynamic",
+      "epsilon": 5.290928693482562,
+      "epsilon_limit": 8,
+      "delta": 0.00001,
+      "sigma": 0.9154498443603515,
+      "clip": 1,
+      "sample_rate": 0.14285714285714285,
+      "cumulative_steps": 14,
+      "secure_rng": false,
+      "noise_schedule": [
+        1.0769998168945312,
+        0.9154498443603515,
+        0.7538998718261718
+      ],
+      "scope": "Conditional record-level training accountant, fixed public allocation. No hospital-level guarantee."
+    },
+    {
+      "schema": 2,
+      "kind": "privacy",
+      "participant": 3,
+      "timestamp": 1793818109.3168755,
+      "round": 2,
+      "complete": true,
+      "mode": "dynamic",
+      "epsilon": 4.518832450808188,
+      "epsilon_limit": 8,
+      "delta": 0.00001,
+      "sigma": 0.713601653289795,
+      "clip": 1,
+      "sample_rate": 0.02702702702702703,
+      "cumulative_steps": 74,
+      "secure_rng": false,
+      "noise_schedule": [
+        0.8395313568115235,
+        0.713601653289795,
+        0.5876719497680664
+      ],
+      "scope": "Conditional record-level training accountant, fixed public allocation. No hospital-level guarantee."
+    },
+    {
+      "schema": 2,
+      "kind": "privacy",
+      "participant": 1,
+      "timestamp": 1793818137.5873692,
+      "round": 3,
+      "complete": true,
+      "mode": "dynamic",
+      "epsilon": 7.942159010090661,
+      "epsilon_limit": 8,
+      "delta": 0.00001,
+      "sigma": 0.8822017776489259,
+      "clip": 1,
+      "sample_rate": 0.3333333333333333,
+      "cumulative_steps": 9,
+      "secure_rng": false,
+      "noise_schedule": [
+        1.26028825378418,
+        1.071245015716553,
+        0.8822017776489259
+      ],
+      "scope": "Conditional record-level training accountant, fixed public allocation. No hospital-level guarantee."
+    },
+    {
+      "schema": 2,
+      "kind": "privacy",
+      "participant": 2,
+      "timestamp": 1793818137.3128161,
+      "round": 3,
+      "complete": true,
+      "mode": "dynamic",
+      "epsilon": 7.908734081689812,
+      "epsilon_limit": 8,
+      "delta": 0.00001,
+      "sigma": 0.7538998718261718,
+      "clip": 1,
+      "sample_rate": 0.14285714285714285,
+      "cumulative_steps": 21,
+      "secure_rng": false,
+      "noise_schedule": [
+        1.0769998168945312,
+        0.9154498443603515,
+        0.7538998718261718
+      ],
+      "scope": "Conditional record-level training accountant, fixed public allocation. No hospital-level guarantee."
+    },
+    {
+      "schema": 2,
+      "kind": "privacy",
+      "participant": 3,
+      "timestamp": 1793818137.3247035,
+      "round": 3,
+      "complete": true,
+      "mode": "dynamic",
+      "epsilon": 7.474457654199676,
+      "epsilon_limit": 8,
+      "delta": 0.00001,
+      "sigma": 0.5876719497680664,
+      "clip": 1,
+      "sample_rate": 0.02702702702702703,
+      "cumulative_steps": 111,
+      "secure_rng": false,
+      "noise_schedule": [
+        0.8395313568115235,
+        0.713601653289795,
+        0.5876719497680664
+      ],
+      "scope": "Conditional record-level training accountant, fixed public allocation. No hospital-level guarantee."
+    }
+  ],
+  "evaluations": [
+    {
+      "schema": 2,
+      "kind": "evaluation",
+      "participant": 0,
+      "timestamp": 1793818099.4439795,
+      "round": 1,
+      "round_seconds": 53.08920199099998,
+      "validation": {
+        "records": 91,
+        "accuracy": 0.6593406593406593,
+        "malignant_recall": 0.08823529411764706,
+        "malignant_f1": 0.16216216216216217,
+        "roc_auc": 0.9220846233230133,
+        "confusion_matrix": [
+          [
+            3,
+            31
+          ],
+          [
+            0,
+            57
+          ]
+        ],
+        "class_order": [
+          "malignant",
+          "benign"
+        ]
+      }
+    },
+    {
+      "schema": 2,
+      "kind": "evaluation",
+      "participant": 0,
+      "timestamp": 1793818134.995456,
+      "round": 2,
+      "round_seconds": 35.177450777000104,
+      "validation": {
+        "records": 91,
+        "accuracy": 0.6923076923076923,
+        "malignant_recall": 0.17647058823529413,
+        "malignant_f1": 0.3,
+        "roc_auc": 0.9736842105263158,
+        "confusion_matrix": [
+          [
+            6,
+            28
+          ],
+          [
+            0,
+            57
+          ]
+        ],
+        "class_order": [
+          "malignant",
+          "benign"
+        ]
+      }
+    },
+    {
+      "schema": 2,
+      "kind": "evaluation",
+      "participant": 0,
+      "timestamp": 1793818161.8388867,
+      "round": 3,
+      "round_seconds": 26.189868895000018,
+      "validation": {
+        "records": 91,
+        "accuracy": 0.7362637362637363,
+        "malignant_recall": 0.29411764705882354,
+        "malignant_f1": 0.45454545454545453,
+        "roc_auc": 0.9824561403508771,
+        "confusion_matrix": [
+          [
+            10,
+            24
+          ],
+          [
+            0,
+            57
+          ]
+        ],
+        "class_order": [
+          "malignant",
+          "benign"
+        ]
+      },
+      "final_test": {
+        "records": 114,
+        "accuracy": 0.7631578947368421,
+        "malignant_recall": 0.35714285714285715,
+        "malignant_f1": 0.5263157894736842,
+        "roc_auc": 0.9761904761904762,
+        "confusion_matrix": [
+          [
+            15,
+            27
+          ],
+          [
+            0,
+            72
+          ]
+        ],
+        "class_order": [
+          "malignant",
+          "benign"
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "accounting_complete": true,
+  "epsilon_max": 7.942159010090661,
+  "expected_clients": [
+    1,
+    2,
+    3
+  ],
+  "rounds": 3,
+  "final_test": {
+    "records": 114,
+    "accuracy": 0.7631578947368421,
+    "malignant_recall": 0.35714285714285715,
+    "malignant_f1": 0.5263157894736842,
+    "roc_auc": 0.9761904761904762,
+    "confusion_matrix": [
+      [
+        15,
+        27
+      ],
+      [
+        0,
+        72
+      ]
+    ],
+    "class_order": [
+      "malignant",
+      "benign"
+    ]
+  },
+  "comparison_key": {
+    "protocol": "project2-public-evaluation-v2",
+    "execution": "NEBULA container scenario",
+    "seed": 42,
+    "iid": false,
+    "alpha": 0.5,
+    "rounds": 3,
+    "epochs": 1,
+    "model": "MLP",
+    "clients": [
+      {
+        "participant": 1,
+        "records": 17,
+        "malignant": 1,
+        "benign": 16
+      },
+      {
+        "participant": 2,
+        "records": 55,
+        "malignant": 52,
+        "benign": 3
+      },
+      {
+        "participant": 3,
+        "records": 292,
+        "malignant": 83,
+        "benign": 209
+      }
+    ]
+  },
+  "scope": "Conditional record-level training accounting with fixed public synthetic allocation and sizes. No hospital-level guarantee or clinical validation.",
+  "rng": "Experimental RNG, not cryptographically secure",
+  "interpretation": "Complete training accounting"
+}

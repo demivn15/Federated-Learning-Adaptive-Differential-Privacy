@@ -1,0 +1,33 @@
+{
+  "requested_template": "https://es.overleaf.com/latex/templates/ieee-access-latex-template/cdxrhtbjgszv",
+  "class_and_header_assets_mirror": "https://github.com/TMLlaboratory/latex-template-ieee-access",
+  "commit": "521d25ee27ea6247aebc18954b5cb048b667b8cd",
+  "note": "IEEE Access class and header assets retained from a public mirror. Byte identity with the gallery archive was not verified. The authored access.tex follows the gallery document class and front-matter structure. No source-class layout edits.",
+  "files": [
+    {
+      "file": "ieeeaccess.cls",
+      "source": "https://raw.githubusercontent.com/TMLlaboratory/latex-template-ieee-access/521d25ee27ea6247aebc18954b5cb048b667b8cd/ieeeaccess.cls",
+      "sha256": "61ef60d6d14a9faf887e4a50dcebc65ff9c0e5c058934d0be21374ac79412a98"
+    },
+    {
+      "file": "IEEEtran.cls",
+      "source": "https://raw.githubusercontent.com/TMLlaboratory/latex-template-ieee-access/521d25ee27ea6247aebc18954b5cb048b667b8cd/IEEEtran.cls",
+      "sha256": "da751920a317ed318b7b5cd7fa585a6cc7d28502d457856382e9be24b10a3bd7"
+    },
+    {
+      "file": "logo.png",
+      "source": "https://raw.githubusercontent.com/TMLlaboratory/latex-template-ieee-access/521d25ee27ea6247aebc18954b5cb048b667b8cd/logo.png",
+      "sha256": "7e04ba7f0c579f3765941680e2a19437e15a81b84a138d73c54bd4afead752cd"
+    },
+    {
+      "file": "notaglinelogo.png",
+      "source": "https://raw.githubusercontent.com/TMLlaboratory/latex-template-ieee-access/521d25ee27ea6247aebc18954b5cb048b667b8cd/notaglinelogo.png",
+      "sha256": "955e9a07fb35ffbc8a41597b8c6e7ec4cedf6a8652f5c73a33957044aae64900"
+    },
+    {
+      "file": "bullet.png",
+      "source": "https://raw.githubusercontent.com/TMLlaboratory/latex-template-ieee-access/521d25ee27ea6247aebc18954b5cb048b667b8cd/bullet.png",
+      "sha256": "754772e36aab389556f98c14f5deeb4031e792b68a766dc5f9766e76e114fffc"
+    }
+  ]
+}

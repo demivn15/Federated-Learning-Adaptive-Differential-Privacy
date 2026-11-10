@@ -1,0 +1,100 @@
+[
+  {
+    "title": "WDBC_V3_ADAPTATIVA_01",
+    "scenario": "nebula_CFL_2026_11_04_14_59_01",
+    "mode": "adaptive",
+    "execution": "NEBULA container scenario",
+    "final_test": {
+      "records": 114,
+      "accuracy": 0.8333333333333334,
+      "malignant_recall": 0.5476190476190477,
+      "malignant_f1": 0.7076923076923077,
+      "roc_auc": 0.9828042328042328,
+      "confusion_matrix": [
+        [
+          23,
+          19
+        ],
+        [
+          0,
+          72
+        ]
+      ],
+      "class_order": [
+        "malignant",
+        "benign"
+      ]
+    },
+    "epsilon_max": 7.941366513069862,
+    "round_seconds_sum": 110.30222608400027,
+    "client1_clips": [
+      1.512700031370046,
+      1.7003470229361548,
+      1.782626468780221
+    ]
+  },
+  {
+    "title": "WDBC_V3_BASE_01",
+    "scenario": "nebula_CFL_2026_11_04_15_03_40",
+    "mode": "baseline",
+    "execution": "NEBULA container scenario",
+    "final_test": {
+      "records": 114,
+      "accuracy": 0.9473684210526315,
+      "malignant_recall": 0.9761904761904762,
+      "malignant_f1": 0.9318181818181818,
+      "roc_auc": 0.994378306878307,
+      "confusion_matrix": [
+        [
+          41,
+          1
+        ],
+        [
+          5,
+          67
+        ]
+      ],
+      "class_order": [
+        "malignant",
+        "benign"
+      ]
+    },
+    "epsilon_max": null,
+    "round_seconds_sum": 101.38778902600006,
+    "client1_clips": []
+  },
+  {
+    "title": "WDBC_V3_FIJA_02",
+    "scenario": "nebula_CFL_2026_11_04_15_25_30",
+    "mode": "fixed",
+    "execution": "NEBULA container scenario",
+    "final_test": {
+      "records": 114,
+      "accuracy": 0.8245614035087719,
+      "malignant_recall": 0.5238095238095238,
+      "malignant_f1": 0.6875,
+      "roc_auc": 0.9788359788359788,
+      "confusion_matrix": [
+        [
+          22,
+          20
+        ],
+        [
+          0,
+          72
+        ]
+      ],
+      "class_order": [
+        "malignant",
+        "benign"
+      ]
+    },
+    "epsilon_max": 7.941366513069862,
+    "round_seconds_sum": 91.68501272100002,
+    "client1_clips": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "protocol": "project2-public-evaluation-v3",
+  "dataset": "WDBC",
+  "privacy_policy": "constant-sigma-public-reference-adaptive-clipping-v1",
+  "public_reference_purpose": "Normalization, validation and adaptive clipping. Final test excluded.",
+  "seed": 42,
+  "label_mapping": {
+    "0": "malignant",
+    "1": "benign"
+  },
+  "training_records": 364,
+  "public_validation_records": 91,
+  "final_test_records": 114,
+  "iid": false,
+  "dirichlet_alpha": 0.5,
+  "clients": [
+    {
+      "participant": 1,
+      "records": 17,
+      "malignant": 1,
+      "benign": 16
+    },
+    {
+      "participant": 2,
+      "records": 55,
+      "malignant": 52,
+      "benign": 3
+    },
+    {
+      "participant": 3,
+      "records": 292,
+      "malignant": 83,
+      "benign": 209
+    }
+  ],
+  "privacy_scope": "Record-level training accounting conditional on public fixed synthetic allocation and sizes. No hospital-level or full deployment guarantee.",
+  "normalization": "StandardScaler fitted only on the 91 designated public calibration records",
+  "execution": "Standalone CPU integration smoke test, not a NEBULA network/container run"
+}

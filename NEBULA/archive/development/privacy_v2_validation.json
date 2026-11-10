@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-04",
+  "upstream_commit": "525b31c674644c653117126b5a1473a5321ac240",
+  "reviewed_update_files": 24,
+  "checks": {
+    "python_source_parse": "pass",
+    "jinja_templates": [
+      "deployment.html",
+      "monitor.html",
+      "research.html"
+    ],
+    "javascript_syntax": "pass",
+    "unit_tests": {
+      "passed": 4,
+      "skipped": [
+        "HDF5 writer requires Ubuntu environment",
+        "Actual NEBULA Lightning path requires Ubuntu environment"
+      ]
+    },
+    "real_opacus_rounds": "pass, cumulative epsilon and unexpected-step guard",
+    "standalone_smoke_modes": [
+      "baseline",
+      "fixed",
+      "dynamic"
+    ],
+    "csv_json_rendering_checks": "pass, 3 baseline evaluation rows and 9 dynamic privacy rows",
+    "browser_view": "loaded actual standalone journals and explanatory metrics"
+  },
+  "deployment_state": "Prepared Windows checkout. Not yet applied or run as v2 inside Ubuntu/NEBULA.",
+  "results": "results/privacy_v2_smoke_20261104",
+  "rng": "Experimental, not CSPRNG"
+}

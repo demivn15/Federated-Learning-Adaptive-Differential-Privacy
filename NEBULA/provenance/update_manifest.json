@@ -1,0 +1,164 @@
+{
+  "nebula/controller/container_lifecycle.py": {
+    "before": null,
+    "previous": [],
+    "after": "5df91333c33fdd71f7d7cd9ca9105ca00343dec04514da7aa11d6db643ecad45"
+  },
+  "nebula/controller/controller.py": {
+    "before": "3acf1dfeba6f5ecc739e2e6926353d73cf37da845860b34254e314d9d37284e4",
+    "previous": [
+      "b6995f4c989026fd3072305c83e069dae9ad59a2a2636561149dfb942f67a453",
+      "c1e0e54d8cc8de305634359a2a78278a255e6fdf18b3d71c3e935fa10f260f04",
+      "d235d275d18f2848f332f18036cd13f366eda93e79361c9fea62fc20d0541ec4"
+    ],
+    "after": "ff27e109f79639a8ff5f4dc422105263b90682397ca14aef5707995f2f2ef3ef"
+  },
+  "nebula/controller/scenarios.py": {
+    "before": "6a4a3e86ad24724f9617e0345675a070035b124ed4367b7346819600380ac72a",
+    "previous": [
+      "29230ac1329dc4a8917333f61efbfe950a57512976ccb1609a93ff0d1a1115d4"
+    ],
+    "after": "4096bafc375a5cc65ca3bf2e5ad9579385d6b29668e250bd0c2d795b2d4632e5"
+  },
+  "nebula/core/datasets/breast_cancer/breast_cancer.py": {
+    "before": "4c8a5bb28fd8d63de7b0a701611c78ccc14ed0e35ead4321d1262e5bf0e9ca50",
+    "previous": [],
+    "after": "b75e47310587558d3e2c82dc8934bac6694c23a98d90bf5c177d0b1e8d0affb8"
+  },
+  "nebula/core/datasets/breast_cancer/research_data.py": {
+    "before": null,
+    "previous": [
+      "3b464e0af0ea89db3aa98a7049adb71568ef53d6c006ae3c7ea06247b101353c"
+    ],
+    "after": "4f600c73533adcc96e96b7faa0f4e75fefff7e3d9e23820ce7ef8c9709031f2a"
+  },
+  "nebula/core/datasets/datamodule.py": {
+    "before": "66066fab33c361f5e7ea89f3e197727f2e44009522e4372ff6df089b8abc939e",
+    "previous": [],
+    "after": "a954c0b47674b83a42139c28014463fa55d4d910e3d16f75a7f9aa6c7ab3a244"
+  },
+  "nebula/core/datasets/nebuladataset.py": {
+    "before": "4200a2779e6b506a6553c778c3f3cda3241456784e2a15acd910d23e5b0b546a",
+    "previous": [
+      "4200a2779e6b506a6553c778c3f3cda3241456784e2a15acd910d23e5b0b546a"
+    ],
+    "after": "f4434144b4e370b494c64f30190d19846703cb907f87381a61ff5b92108bfa52"
+  },
+  "nebula/core/engine.py": {
+    "before": "165ed2126d8d1678f605d1cad3fb725074d782abf044d27117a9d68fa8b18616",
+    "previous": [],
+    "after": "995c10878fd0916974c89876b9a975a51b996e85df7af2f7e66fa18b88e4e72a"
+  },
+  "nebula/core/models/nebulamodel.py": {
+    "before": "0a942aaea729eb47825d8e7189256a7fb17d8d2166bc5040273b724a11025225",
+    "previous": [],
+    "after": "d2c47e6403bf7d30390f095fe358d93b21f75c34388cee2e0cd74b7c51485f7b"
+  },
+  "nebula/core/node.py": {
+    "before": "62e201975ff7a095ce3532b93295fadbdabdb84f07884044b04e881018045d14",
+    "previous": [],
+    "after": "cc6850a63588b11e50f8c618da20251a5ace2d5defe71778a185469ffa2fcd41"
+  },
+  "nebula/core/training/adaptive_clipping.py": {
+    "before": null,
+    "previous": [],
+    "after": "3321f888d98660cd1e07377948016caf8bc64be71a7185356c80c552bb65a2ec"
+  },
+  "nebula/core/training/dp.py": {
+    "before": "f21d6dd916ce0c57ed08a4ab04d4f2a116b4a07e9a665da7cff89f09c18c953d",
+    "previous": [
+      "5a23d58a2f1ad09b4c871fa864c0036ef9a2f0031a6d14fa608c785f44dbbe1d"
+    ],
+    "after": "48fc1e0e94ea270fe6d66036c5afbeff4edfabd3769d089889be46f4fd679fd1"
+  },
+  "nebula/core/training/lightning.py": {
+    "before": "a2ed9fdf8ab8e9ee7ac022588c9eb3c8fa11178087a5d4b4c579325a3e79f350",
+    "previous": [],
+    "after": "b08bd6c60aec826f24e689ac0884d60ef50a86a7baad613ff9b55c8d2175ec4b"
+  },
+  "nebula/core/training/lightning_dp.py": {
+    "before": "d4641a10ec9b519859a0f062ba2ea19764491c1e0e7d23a6a4705f0c117c71b2",
+    "previous": [
+      "43053b189e41b9a2f993aa6e03fc4ab429954f4678d91db7350d587072e7490c"
+    ],
+    "after": "ecf1b3282f5c82f0e57e17fe0480c306889a7d467cfe6a98cc2219e15b118df7"
+  },
+  "nebula/core/training/privacy_policy.py": {
+    "before": null,
+    "previous": [
+      "0f4f1e5f7f00b8ecb20a75116bda4b8c6beb32f47e5c120e6ddcc8bb491dfac6"
+    ],
+    "after": "1bc073a6d13841e08d3789dceca70d1f33920f71240d81d96b41b6a5ae3af2f7"
+  },
+  "nebula/core/training/research_results.py": {
+    "before": null,
+    "previous": [],
+    "after": "43f2db76c9c69c0f74cddb3366029df6303ad8f0c33200ebff9400a123fd2ba3"
+  },
+  "nebula/frontend/app.py": {
+    "before": "911f8edbd863bd0c551441bd16f12c42b27abe0024a62aafe1564f57cb7df166",
+    "previous": [
+      "a89a0d987aa498a833eebbb6ee2f7aa9f47cfc22675304d27b77c792ed6f6b57"
+    ],
+    "after": "ec065161326e5a69bbd65cdd1324d112c668dc5e722518cf41d396ce84425c48"
+  },
+  "nebula/frontend/config/participant.json.example": {
+    "before": "b1434a3ab6ad66981cad6ce2125440282a16aa897c0ad5ed80743ddbfd94b05c",
+    "previous": [
+      "849b003cd5dbc73ff7262caf9c32d650a12691b6215d0ee04a40610aba985dcf"
+    ],
+    "after": "c2b649036e2e8301824efe68ef687eff9f7e0d4436ce6f189032245a004e206a"
+  },
+  "nebula/frontend/research_view.py": {
+    "before": null,
+    "previous": [
+      "78541c5f40978a3ba4b26cc0f78f2034492b61a1e2af03c612adb542b67bc91d",
+      "fb2de998bd4d218276eabec52d581533256ea6a123d79b29ec5982cfc6580a9d"
+    ],
+    "after": "0582dd016f2fc63b2c68904a6d427722a4e80745976340551c1b3c780d230dcd"
+  },
+  "nebula/frontend/static/css/research.css": {
+    "before": null,
+    "previous": [],
+    "after": "49cad542f4b5a2cfddd9e15a7c1458cf9a0023f39eccc5ed7ce63cff8bd933cc"
+  },
+  "nebula/frontend/static/js/deployment/dp.js": {
+    "before": "adaa4616abce09687ec2da1e96df68440c32807ec1eb2d9f429f6ade2ddce8ba",
+    "previous": [
+      "a092ff30fdcd45d2166faa94fc6e891b909ef2dd5013c1067339fbd2b64352c5"
+    ],
+    "after": "d827329e08c6c09500e6de0d18fb632f790e10206acfc31c262d39336def7111"
+  },
+  "nebula/frontend/static/js/deployment/ui-controls.js": {
+    "before": "d4eb1b90774aa92fc3f9847d90706c3b78b9227ced43f1ea871ec69514aae28d",
+    "previous": [],
+    "after": "23b7035a1d7f6c15d30f09209c0ecf684676336a21300a76e23bcf6c8e8bda45"
+  },
+  "nebula/frontend/static/js/research.js": {
+    "before": null,
+    "previous": [
+      "8ed905dccae00ebd23a0ce17d2fec2dbd90a9b2acca6316b4dbc9cc57fd6d492",
+      "c09e171ee6428804b0dd5e06565335b87588e683783885c00c59f3b5f73274fd"
+    ],
+    "after": "e4bfeb0647d2036d487a09727340d644fb31a5918bcd00fb3f3b1577a71c0e6c"
+  },
+  "nebula/frontend/templates/deployment.html": {
+    "before": "d96738d2e0f12b9a46913156454d79b77820b7f44a29c7cb6143283390c7abed",
+    "previous": [
+      "8ead0cfbe3f6df2de387583ab2817a3f844801f65ed2830d0338ca0f5432dd70"
+    ],
+    "after": "cd96af8875dc6923582eb2d4a537a6fc78bb83a8a865d307652a93fd9c71e9df"
+  },
+  "nebula/frontend/templates/monitor.html": {
+    "before": "93ae91f3eb43de85c9124a6ab42a3f3fa65dc7cd725faf0151950a8201643f62",
+    "previous": [],
+    "after": "465b04a30ce3a0e7892a6424f174b62fc4e18604c47c5705d08eb483ba122e1d"
+  },
+  "nebula/frontend/templates/research.html": {
+    "before": null,
+    "previous": [
+      "5e6a33f1050a173ece69759640c45db68939ad543da22c9bf63036c3d132e64c"
+    ],
+    "after": "a93bf548ebaf2e7bca6425601c029bd2f87dc33ce55cff9093a34a8c7879affa"
+  }
+}

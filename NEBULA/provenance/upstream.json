@@ -1,0 +1,15 @@
+{
+  "upstream_project": "NEBULA, CyberDataLab",
+  "repository": "https://github.com/CyberDataLab/nebula",
+  "base_commit": "525b31c674644c653117126b5a1473a5321ac240",
+  "license": "AGPL-3.0, retained in LICENSE",
+  "package_date": "2026-11-10",
+  "authors": [
+    "Mateo Oñate",
+    "Demian Viteri"
+  ],
+  "active_protocol": "Public-reference adaptive clipping with constant per-client noise multiplier and cumulative Opacus RDP accounting",
+  "layout": "The framework is at the repository root. Current utilities, tests and evidence have separate directories.",
+  "source_changes_in_packaging": "Runtime sources preserve their previous contents after CRLF-to-LF normalization. Utilities have portable paths and dedicated output locations.",
+  "historical_records": "Archived installation metadata describes its original date, not the status of this new package."
+}

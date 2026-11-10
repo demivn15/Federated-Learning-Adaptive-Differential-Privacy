@@ -1,0 +1,58 @@
+{
+  "implementation": "standalone CPU feasibility pilot, not NEBULA end-to-end",
+  "mode": "dp",
+  "rounds": 3,
+  "local_epochs": 1,
+  "model": "30-256-128-2 MLP",
+  "model_parameters": 41090,
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "batch_requested": 8,
+  "sample_rates": [
+    0.0625,
+    0.0625,
+    0.0625
+  ],
+  "public_normalization_factors": [
+    7,
+    7,
+    7
+  ],
+  "client_steps": [
+    48,
+    48,
+    48
+  ],
+  "training_wall_seconds": 1.9668569000000389,
+  "cpu_threads": 1,
+  "device": "cpu",
+  "test_metrics": {
+    "accuracy": 0.8333333333333334,
+    "f1_malignant": 0.8080808080808081,
+    "recall_malignant": 0.9523809523809523,
+    "roc_auc": 0.9523809523809524
+  },
+  "versions": {
+    "torch": "2.11.0",
+    "numpy": "2.4.4",
+    "scikit-learn": "1.5.1",
+    "scipy": "1.18.1",
+    "opacus": "1.5.4"
+  },
+  "python": "3.12.7",
+  "system": "Windows-10-10.0.19045-SP0",
+  "noise_multiplier": 1.0,
+  "max_grad_norm": 1.0,
+  "delta": 1e-05,
+  "accounted_epsilon_opacus": 3.798115839249234,
+  "privacy_scope": "nominal Opacus training accounting for one public-data pilot run; no clinical or production privacy certification",
+  "secure_mode": false,
+  "limitations": [
+    "single run, not the full three-repeat benchmark",
+    "synthetic institutions, not real multicenter data",
+    "no network, no NEBULA containers in this pilot",
+    "non-cryptographic noise generator in this feasibility environment"
+  ],
+  "wall_clock_scope": "federated loop including public validation, privacy queries and console output; excludes import/setup and final test",
+  "local_optimizer_state": "Adam moments persist between rounds in this standalone pilot"
+}

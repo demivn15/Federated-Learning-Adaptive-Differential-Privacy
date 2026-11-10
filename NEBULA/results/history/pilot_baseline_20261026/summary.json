@@ -1,0 +1,58 @@
+{
+  "implementation": "standalone CPU feasibility pilot, not NEBULA end-to-end",
+  "mode": "baseline",
+  "rounds": 3,
+  "local_epochs": 1,
+  "model": "30-256-128-2 MLP",
+  "model_parameters": 41090,
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "batch_requested": 8,
+  "sample_rates": [
+    0.0625,
+    0.0625,
+    0.0625
+  ],
+  "public_normalization_factors": [
+    null,
+    null,
+    null
+  ],
+  "client_steps": [
+    48,
+    48,
+    48
+  ],
+  "training_wall_seconds": 0.37665610000010474,
+  "cpu_threads": 1,
+  "device": "cpu",
+  "test_metrics": {
+    "accuracy": 0.9824561403508771,
+    "f1_malignant": 0.975609756097561,
+    "recall_malignant": 0.9523809523809523,
+    "roc_auc": 0.9983465608465609
+  },
+  "versions": {
+    "torch": "2.11.0",
+    "numpy": "2.4.4",
+    "scikit-learn": "1.5.1",
+    "scipy": "1.18.1",
+    "opacus": "1.5.4"
+  },
+  "python": "3.12.7",
+  "system": "Windows-10-10.0.19045-SP0",
+  "noise_multiplier": null,
+  "max_grad_norm": null,
+  "delta": null,
+  "accounted_epsilon_opacus": null,
+  "privacy_scope": "no DP bound, non-private baseline",
+  "secure_mode": false,
+  "limitations": [
+    "single run, not the full three-repeat benchmark",
+    "synthetic institutions, not real multicenter data",
+    "no network, no NEBULA containers in this pilot",
+    "non-cryptographic noise generator in this feasibility environment"
+  ],
+  "wall_clock_scope": "federated loop including public validation, privacy queries and console output; excludes import/setup and final test",
+  "local_optimizer_state": "Adam moments persist between rounds in this standalone pilot"
+}

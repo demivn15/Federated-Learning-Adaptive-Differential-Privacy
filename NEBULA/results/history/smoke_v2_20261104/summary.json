@@ -1,0 +1,86 @@
+[
+  {
+    "mode": "baseline",
+    "execution": "Standalone CPU integration smoke test, not a NEBULA network/container run",
+    "rounds": 3,
+    "wall_seconds": 2.984069499999805,
+    "final_test": {
+      "records": 114,
+      "accuracy": 0.9473684210526315,
+      "malignant_recall": 0.9761904761904762,
+      "malignant_f1": 0.9318181818181818,
+      "roc_auc": 0.9953703703703703,
+      "confusion_matrix": [
+        [
+          41,
+          1
+        ],
+        [
+          5,
+          67
+        ]
+      ],
+      "class_order": [
+        "malignant",
+        "benign"
+      ]
+    },
+    "epsilon_max": null
+  },
+  {
+    "mode": "fixed",
+    "execution": "Standalone CPU integration smoke test, not a NEBULA network/container run",
+    "rounds": 3,
+    "wall_seconds": 3.420932499999708,
+    "final_test": {
+      "records": 114,
+      "accuracy": 0.6491228070175439,
+      "malignant_recall": 0.047619047619047616,
+      "malignant_f1": 0.09090909090909091,
+      "roc_auc": 0.9821428571428571,
+      "confusion_matrix": [
+        [
+          2,
+          40
+        ],
+        [
+          0,
+          72
+        ]
+      ],
+      "class_order": [
+        "malignant",
+        "benign"
+      ]
+    },
+    "epsilon_max": 7.941366513069862
+  },
+  {
+    "mode": "dynamic",
+    "execution": "Standalone CPU integration smoke test, not a NEBULA network/container run",
+    "rounds": 3,
+    "wall_seconds": 4.070067199999812,
+    "final_test": {
+      "records": 114,
+      "accuracy": 0.631578947368421,
+      "malignant_recall": 0.0,
+      "malignant_f1": 0.0,
+      "roc_auc": 0.9788359788359788,
+      "confusion_matrix": [
+        [
+          0,
+          42
+        ],
+        [
+          0,
+          72
+        ]
+      ],
+      "class_order": [
+        "malignant",
+        "benign"
+      ]
+    },
+    "epsilon_max": 7.942159010090652
+  }
+]

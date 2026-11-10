@@ -1,0 +1,46 @@
+{
+  "checked_on": "2026-11-04",
+  "nebula_commit": "525b31c674644c653117126b5a1473a5321ac240",
+  "nebula_status": "v1 Non-IID scenario completed October 28, three rounds, DP disabled; v2 source update prepared, Ubuntu deployment pending",
+  "docker_server_reported_by_user": "Docker Desktop4.97.0,Engine29.9.2,linux/amd64",
+  "ubuntu": "registered WSL2; service access denied from chat",
+  "pilot": "two completed standalone CPU runs, not NEBULA",
+  "pilot_training_records": 364,
+  "pilot_public_calibration_records": 91,
+  "pilot_public_test_records": 114,
+  "pilot_client_sizes": [
+    122,
+    121,
+    121
+  ],
+  "pilot_accountant_steps_per_client": 48,
+  "pilot_nominal_epsilon": 3.798115839249234,
+  "privacy_scope": "nominal experimental training accounting; complete NEBULA pipeline still under review",
+  "python_source_checks": "pass",
+  "toml_json_checks": "pass",
+  "uv_linux_wheel_sha256": "8efec4ef5acddc35f0867998c44e0b15fc4dace1e4c26d01443871a2fbb04bf6",
+  "uv_wheel_layout_verified": true,
+  "docker_build_smoke_check": "prepared, not run",
+  "bash_n_check": "not available in restricted Windows execution environment",
+  "frontend_http_status": 200,
+  "frontend_url": "http://127.0.0.1:6060/platform",
+  "proxy_port_fix": "Applied and HTTP-verified in October 26 session",
+  "privacy_v2": {
+    "implementation": "NEBULA fixed and dynamic public noise schedules, epsilon ceiling, cumulative RDP accounting, public validation and results panel",
+    "source_validation": "Python sources, Jinja templates and JavaScript syntax passed",
+    "tests": "4 tests passed; HDF5 and actual Lightning integration checks skipped on Windows and supplied for Ubuntu",
+    "standalone_smoke_runs": [
+      "baseline",
+      "fixed",
+      "dynamic"
+    ],
+    "standalone_output": "results/privacy_v2_smoke_20261104",
+    "actual_private_epsilon_max": {
+      "fixed": 7.941366513069862,
+      "dynamic": 7.942159010090652
+    },
+    "rng": "experimental PyTorch RNG, independent non-exported seeds; CSPRNG mode requires torchcsprng",
+    "deployment": "Not yet applied to /home/mateoonate27/crypto-project2-nebula",
+    "limitations": "Conditional per-record training accounting under fixed public synthetic allocation; not hospital-level or production guarantee"
+  }
+}

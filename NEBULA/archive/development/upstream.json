@@ -1,0 +1,8 @@
+{
+  "project": "NEBULA, CyberDataLab",
+  "repository": "https://github.com/CyberDataLab/nebula",
+  "commit": "525b31c674644c653117126b5a1473a5321ac240",
+  "prepared_on": "2026-10-26",
+  "installation_status": "source_prepared_not_yet_installed",
+  "application": "Breast tumor classification across three simulated medical centers"
+}

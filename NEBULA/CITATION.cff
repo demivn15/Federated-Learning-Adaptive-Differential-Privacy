@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Cite this software and acknowledge the upstream NEBULA framework and WDBC dataset."
+title: "Federated Breast Tumor Classification with Public-Reference Adaptive Differential Privacy"
+type: software
+authors:
+  - family-names: "Oñate"
+    given-names: "Mateo"
+    affiliation: "Yachay Tech University"
+  - family-names: "Viteri"
+    given-names: "Demian"
+    affiliation: "Yachay Tech University"
+abstract: "A NEBULA research extension comparing non-private federated training, fixed DP-SGD and public-reference adaptive clipping on the public WDBC benchmark."
+keywords:
+  - federated learning
+  - differential privacy
+  - adaptive clipping
+  - NEBULA
+  - breast tumor classification

@@ -1,0 +1,33 @@
+name: Repository checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Check repository contents and source syntax
+        run: python -B scripts/check_repository.py
+      - name: Check shell syntax
+        run: |
+          for script in scripts/*.sh; do
+            bash -n "$script"
+          done
+      - name: Run release and lifecycle checks
+        run: python -B tests/verify_adaptive_release.py
+      - name: Run frontend behavior checks
+        run: node --experimental-vm-modules tests/verify_frontend_adaptive.mjs

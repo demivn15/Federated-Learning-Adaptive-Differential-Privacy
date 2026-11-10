@@ -1,0 +1,83 @@
+{
+  "date": "2026-11-10",
+  "temporary_local_artifacts": {
+    "paths": [".tools/", ".local/"],
+    "git_status": "Excluded by .gitignore. Not part of the GitHub upload through Git.",
+    "cleanup": "Automatic command approval rejected removal, including after a specific filesystem permission grant. The folders were preserved."
+  },
+  "platform": "Windows, source packaging and available local checks",
+  "repository_check": {
+    "result": "PASS",
+    "python_files_parsed": 247,
+    "managed_sources_verified": 26,
+    "required_files_present": 14
+  },
+  "privacy_tests": {
+    "discovered": 8,
+    "passed": 6,
+    "skipped_count": 2,
+    "failed": 0,
+    "command": "python -B tests/verify_privacy.py",
+    "environment": "Existing Windows pilot environment, Python 3.12, Opacus 1.5.4. Not the new locked Linux environment.",
+    "skipped": [
+      "NEBULA Lightning integration",
+      "HDF5 partition integration"
+    ]
+  },
+  "release_lifecycle_tests": {
+    "passed": 9,
+    "failed": 0,
+    "command": "python -B tests/verify_adaptive_release.py"
+  },
+  "frontend_behavior_tests": {
+    "result": "PASS",
+    "command": "node --experimental-vm-modules tests/verify_frontend_adaptive.mjs"
+  },
+  "shell_syntax": {
+    "parser": "tree-sitter-bash 0.25.0",
+    "result": "PASS",
+    "scripts": [
+      "scripts/install_wsl.sh",
+      "scripts/run.sh",
+      "scripts/setup.sh",
+      "scripts/test.sh",
+      "app/linux/install.sh",
+      "app/linux/run.sh",
+      "app/macos/install.sh",
+      "app/macos/run.sh",
+      "nebula/controller/start_services.sh",
+      "nebula/frontend/start_services.sh",
+      "nebula/physical/install.sh",
+      "nebula/physical/node.sh"
+    ],
+    "scope": "Syntax parsing only. This does not execute Bash, Docker or Linux setup."
+  },
+  "dependency_lock": {
+    "result": "PASS",
+    "packages": 242,
+    "uv_version": "0.8.22",
+    "python": "3.11.13",
+    "command": "uv lock --check --offline --python 3.11.13",
+    "scope": "New Linux dependency resolution and readable exports. Not a freeze of the historical training installation."
+  },
+  "preserved_evidence": {
+    "byte_identical_files": 71,
+    "manifest": "provenance/evidence_checksums.json"
+  },
+  "runtime_sources": {
+    "preserved_managed_files": 26,
+    "allowed_normalization": "CRLF to LF"
+  },
+  "historical_ubuntu_validation": {
+    "date": "2026-11-04",
+    "privacy_passed": 8,
+    "release_lifecycle_passed": 9,
+    "scope": "Previously installed project, confirmed before this repository reorganization."
+  },
+  "not_executed_for_this_package": [
+    "Fresh Docker image builds",
+    "Full platform launch and container training with the newly locked dependencies",
+    "Native Bash execution on Linux/WSL"
+  ],
+  "scope": "Passing packaging checks do not claim a fresh Linux installation or new experimental repetitions."
+}

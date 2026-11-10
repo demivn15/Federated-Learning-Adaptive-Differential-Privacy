@@ -1,0 +1,42 @@
+# Byte-compiled / Python execution caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments & Virtual Envs
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Datasets & Large Pretrained Models
+data/
+*.h5
+*.pth
+*.pt
+*.onnx
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints
+
+# IDEs, Editors & System Files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Experiment Outputs, Logs & LaTeX Build Artifacts
+results/logs/*
+results/plots/*
+!results/logs/.gitkeep
+!results/plots/.gitkeep
+docs/*.aux
+docs/*.log
+docs/*.out
+docs/*.toc
+docs/*.synctex.gz

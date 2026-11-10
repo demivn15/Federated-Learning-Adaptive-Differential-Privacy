@@ -1,0 +1,26 @@
+# Core Deep Learning & Computer Vision
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Differential Privacy & Cryptographic Utilities
+opacus>=1.4.0
+
+# Scientific Computing & Data Processing
+numpy>=1.24.0
+scipy>=1.10.0
+pandas>=2.0.0
+scikit-learn>=1.2.0
+
+# Image Processing & Metrics
+Pillow>=9.5.0
+
+# Federated Learning Benchmarks & Unsupervised Adaptation
+wilds>=2.0.0
+
+# Visualization & Logging
+matplotlib>=3.7.0
+seaborn>=0.12.0
+tqdm>=4.65.0
+
+# Testing & Code Quality
+pytest>=7.3.0

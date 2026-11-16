@@ -1,6 +1,0 @@
-datasources:
-- name: Loki
-  type: loki
-  url: http://nebula_nebula-waf-loki:3100
-  isDefault: true
-  editable: true

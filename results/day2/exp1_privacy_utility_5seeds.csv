@@ -1,0 +1,12 @@
+Method,Epsilon,AUROC_Mean,AUROC_Std,Sens_Mean,Sens_Std,F1_Mean,F1_Std
+"1. Centralized Non-Private (Gold)",inf,0.9942,0.0017,95.93,1.35,0.9539,0.0147
+"2. HistoFed Baseline (Cleartext FL)",inf,0.9939,0.0016,95.53,1.04,0.9599,0.0128
+"3. Static DP-FedAvg (C=1.0)",1.0,0.9410,0.0498,93.51,2.67,0.8975,0.0614
+"3. Static DP-FedAvg (C=1.0)",2.0,0.9430,0.0495,94.24,3.48,0.8854,0.0435
+"3. Static DP-FedAvg (C=1.0)",3.0,0.9641,0.0302,95.43,1.05,0.9258,0.0285
+"4. DP-FedSim (Layered Clipping)",1.0,0.9570,0.0365,95.00,1.87,0.9251,0.0374
+"4. DP-FedSim (Layered Clipping)",2.0,0.9543,0.0345,95.62,1.03,0.9037,0.0291
+"4. DP-FedSim (Layered Clipping)",3.0,0.9629,0.0280,95.21,1.32,0.9293,0.0294
+"5. Proposed Adaptive DP-NEBULA (Ours)",1.0,0.9696,0.0280,95.43,1.05,0.9349,0.0198
+"5. Proposed Adaptive DP-NEBULA (Ours)",2.0,0.9650,0.0284,95.02,1.39,0.9264,0.0160
+"5. Proposed Adaptive DP-NEBULA (Ours)",3.0,0.9669,0.0260,95.43,1.05,0.9364,0.0182

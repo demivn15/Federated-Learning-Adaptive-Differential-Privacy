@@ -1,0 +1,21 @@
+{
+  "scenario_name": "Static_DP_FedAvg",
+  "protocol": "project2-public-evaluation-v3",
+  "topology": "NEBULA_P2P_Decentralized",
+  "nodes": 5,
+  "dataset": "Camelyon17-WILDS-96x96x3",
+  "rounds": 25,
+  "dp": {
+    "enabled": true,
+    "mode": "static",
+    "clip_norm_c0": 1.0,
+    "sigma_static": 2.15,
+    "target_epsilons": [1.0, 2.0, 3.0],
+    "delta": 1e-5,
+    "poisson_q": 0.12
+  },
+  "crypto": {
+    "enabled": false,
+    "transport": "cleartext"
+  }
+}

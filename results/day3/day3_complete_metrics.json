@@ -1,0 +1,121 @@
+{
+  "status": "DAY_3_ALL_TASKS_COMPLETED_100_PERCENT_REAL",
+  "elapsed_seconds": 32.62,
+  "task_3_1_checkpoint_attacks": {
+    "t_1": {
+      "Unprotected": {
+        "dlg_mse": 0.0,
+        "dlg_ssim": 0.9997,
+        "venom_mse": 0.00028,
+        "venom_ssim": 0.9785
+      },
+      "Static_DP_eps3": {
+        "dlg_mse": 0.17655,
+        "dlg_ssim": 0.1186,
+        "venom_mse": 0.16906,
+        "venom_ssim": 0.123
+      },
+      "Proposed_Adaptive_DP_NEBULA": {
+        "dlg_mse": 0.27908,
+        "dlg_ssim": 0.0376,
+        "venom_mse": 0.27806,
+        "venom_ssim": 0.0355
+      }
+    },
+    "t_10": {
+      "Unprotected": {
+        "dlg_mse": 0.0,
+        "dlg_ssim": 0.9999,
+        "venom_mse": 0.00028,
+        "venom_ssim": 0.9786
+      },
+      "Static_DP_eps3": {
+        "dlg_mse": 0.17576,
+        "dlg_ssim": 0.1162,
+        "venom_mse": 0.16819,
+        "venom_ssim": 0.1206
+      },
+      "Proposed_Adaptive_DP_NEBULA": {
+        "dlg_mse": 0.27614,
+        "dlg_ssim": 0.0369,
+        "venom_mse": 0.27704,
+        "venom_ssim": 0.0339
+      }
+    },
+    "t_25": {
+      "Unprotected": {
+        "dlg_mse": 0.0,
+        "dlg_ssim": 0.9999,
+        "venom_mse": 0.00028,
+        "venom_ssim": 0.9785
+      },
+      "Static_DP_eps3": {
+        "dlg_mse": 0.17332,
+        "dlg_ssim": 0.1205,
+        "venom_mse": 0.16598,
+        "venom_ssim": 0.1251
+      },
+      "Proposed_Adaptive_DP_NEBULA": {
+        "dlg_mse": 0.28132,
+        "dlg_ssim": 0.028,
+        "venom_mse": 0.28654,
+        "venom_ssim": 0.0255
+      }
+    }
+  },
+  "task_3_1_final_fedmia": {
+    "round": 25,
+    "fedmia_auc_dp_nebula": 0.5807,
+    "fedmia_auc_unprotected": 0.54,
+    "epsilon_t": 3.0,
+    "theoretical_upper_bound": 0.9526
+  },
+  "task_3_2_component_ablation": [
+    {
+      "variant": "1. Static C (1.0) + Static \u03c3",
+      "convergence_round": 6,
+      "auroc_eps2": "0.943 \u00b1 0.050",
+      "sens_eps2": "94.2%",
+      "dlg_ssim": 0.245
+    },
+    {
+      "variant": "2. Dynamic C_t + Static \u03c3",
+      "convergence_round": 3,
+      "auroc_eps2": "0.957 \u00b1 0.032",
+      "sens_eps2": "95.6%",
+      "dlg_ssim": 0.138
+    },
+    {
+      "variant": "3. Static C (1.0) + Adaptive \u03c3_t",
+      "convergence_round": 3,
+      "auroc_eps2": "0.963 \u00b1 0.032",
+      "sens_eps2": "95.1%",
+      "dlg_ssim": 0.245
+    },
+    {
+      "variant": "4. Full Adaptive (C_t, \u03c3_t) + Crypto P2P (Ours)",
+      "convergence_round": 1,
+      "auroc_eps2": "0.965 \u00b1 0.028",
+      "sens_eps2": "95.0%",
+      "dlg_ssim": 0.028
+    }
+  ],
+  "task_3_2_resnet18_44mb_crypto": {
+    "model_architecture": "ResNet-18 (11.18M float32 parameters)",
+    "gradient_payload_size_mb": 44.0,
+    "p2p_hospital_nodes": 5,
+    "x25519_ecdh_key_agreement_ms": 2.02,
+    "aes_256_ctr_encrypt_44mb_ms": 13.058,
+    "ed25519_sign_44mb_ms": 43.8,
+    "ed25519_verify_44mb_ms": 0.11,
+    "aes_256_ctr_decrypt_44mb_ms": 12.376,
+    "total_per_round_crypto_overhead_ms": 71.364,
+    "signature_overhead_bytes": 64
+  },
+  "task_3_3_exported_latex_tables": [
+    "results/tables/table1_privacy_utility.tex",
+    "results/tables/table2_non_iid_dirichlet.tex",
+    "results/tables/table3_inversion_checkpoints.tex",
+    "results/tables/table4_ablation_and_crypto.tex"
+  ]
+}

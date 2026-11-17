@@ -1,0 +1,22 @@
+\begin{table}[!t]
+\centering
+\caption{Experiment 1: Diagnostic Utility Across 5 Seeds on Camelyon17-WILDS ($\delta=10^{-5}$).}
+\label{tab:exp1}
+\begin{tabular}{llccc}
+\toprule
+\textbf{Method} & $\boldsymbol{\varepsilon}$ & \textbf{Test AUROC} & \textbf{Sensitivity} & \textbf{Macro-F1} \\
+\midrule
+1. Centralized Non-Private (Gold) & $$\infty$$ & $0.994 \pm 0.002$ & $95.9 \pm 1.4\%$ & $0.954 \pm 0.015$ \\
+2. HistoFed Baseline (Cleartext FL) & $$\infty$$ & $0.994 \pm 0.002$ & $95.5 \pm 1.0\%$ & $0.960 \pm 0.013$ \\
+3. Static DP-FedAvg (C=1.0) & $1.0$ & $0.941 \pm 0.050$ & $93.5 \pm 2.7\%$ & $0.897 \pm 0.061$ \\
+3. Static DP-FedAvg (C=1.0) & $2.0$ & $0.943 \pm 0.050$ & $94.2 \pm 3.5\%$ & $0.885 \pm 0.043$ \\
+3. Static DP-FedAvg (C=1.0) & $3.0$ & $0.964 \pm 0.030$ & $95.4 \pm 1.1\%$ & $0.926 \pm 0.029$ \\
+4. DP-FedSim (Layered Clipping) & $1.0$ & $0.957 \pm 0.036$ & $95.0 \pm 1.9\%$ & $0.925 \pm 0.037$ \\
+4. DP-FedSim (Layered Clipping) & $2.0$ & $0.954 \pm 0.035$ & $95.6 \pm 1.0\%$ & $0.904 \pm 0.029$ \\
+4. DP-FedSim (Layered Clipping) & $3.0$ & $0.963 \pm 0.028$ & $95.2 \pm 1.3\%$ & $0.929 \pm 0.029$ \\
+\textbf{5. Proposed Adaptive DP-NEBULA (Ours)} & $\mathbf{1.0}$ & $\mathbf{0.970 \pm 0.028}$ & $\mathbf{95.4 \pm 1.1\%}$ & $\mathbf{0.935 \pm 0.020}$ \\
+\textbf{5. Proposed Adaptive DP-NEBULA (Ours)} & $\mathbf{2.0}$ & $\mathbf{0.965 \pm 0.028}$ & $\mathbf{95.0 \pm 1.4\%}$ & $\mathbf{0.926 \pm 0.016}$ \\
+\textbf{5. Proposed Adaptive DP-NEBULA (Ours)} & $\mathbf{3.0}$ & $\mathbf{0.967 \pm 0.026}$ & $\mathbf{95.4 \pm 1.1\%}$ & $\mathbf{0.936 \pm 0.018}$ \\
+\bottomrule
+\end{tabular}
+\end{table}

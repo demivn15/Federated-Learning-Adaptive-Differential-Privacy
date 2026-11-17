@@ -1,0 +1,15 @@
+\begin{table}[!t]
+\centering
+\caption{Experiment 2: Non-IID Dirichlet Stress Test Across 5 Hospitals ($\varepsilon=2.0$).}
+\label{tab:exp2}
+\begin{tabular}{llccc}
+\toprule
+\textbf{Regime} & \textbf{Method} & \textbf{Mean AUROC} & \textbf{Hosp. Range} & \textbf{Drift $\|\Delta w\|_2$} \\
+\midrule
+$\beta = 0.1$ & Static DP FedAvg & $0.8800$ & $0.866--0.890$ & $1.2476$ \\
+$\beta = 0.1$ & \textbf{Proposed Adaptive DP NEBULA} & $\mathbf{0.9402}$ & $\mathbf{0.930--0.949}$ & $\mathbf{0.2827}$ \\
+$\beta = 0.5$ & Static DP FedAvg & $0.9373$ & $0.919--0.945$ & $1.0187$ \\
+$\beta = 0.5$ & \textbf{Proposed Adaptive DP NEBULA} & $\mathbf{0.9634}$ & $\mathbf{0.951--0.970}$ & $\mathbf{0.2347}$ \\
+\bottomrule
+\end{tabular}
+\end{table}

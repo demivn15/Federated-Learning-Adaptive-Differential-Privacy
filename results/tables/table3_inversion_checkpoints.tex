@@ -1,0 +1,14 @@
+\begin{table}[!t]
+\centering
+\caption{Experiment 3: Gradient Inversion Resilience Across Real Checkpoints ($96\times 96\times 3$).}
+\label{tab:exp3}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Ckpt.} & \textbf{Unprotected DLG} & \textbf{Static DP DLG} & \textbf{Ours DLG} & \textbf{Ours Venom} \\
+\midrule
+$t = 1$ & $0.9997$ & $0.1186$ & $\mathbf{0.0376}$ & $\mathbf{0.0355}$ \\
+$t = 10$ & $0.9999$ & $0.1162$ & $\mathbf{0.0369}$ & $\mathbf{0.0339}$ \\
+$t = 25$ & $0.9999$ & $0.1205$ & $\mathbf{0.0280}$ & $\mathbf{0.0255}$ \\
+\bottomrule
+\end{tabular}
+\end{table}

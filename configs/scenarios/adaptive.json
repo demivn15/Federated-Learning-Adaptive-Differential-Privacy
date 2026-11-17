@@ -1,0 +1,30 @@
+{
+  "scenario_name": "Proposed_Adaptive_DP_NEBULA_Crypto",
+  "protocol": "project2-public-evaluation-v3",
+  "topology": "NEBULA_P2P_Decentralized_Gossip",
+  "nodes": 5,
+  "dataset": "Camelyon17-WILDS-96x96x3",
+  "rounds": 25,
+  "dp": {
+    "enabled": true,
+    "mode": "dynamic",
+    "clipping": "per_example_vmap",
+    "public_calibration_ratio": 0.035,
+    "c0": 1.2,
+    "gamma": 0.045,
+    "lambda_var": 0.25,
+    "kappa": 0.35,
+    "target_epsilons": [1.0, 2.0, 3.0],
+    "delta": 1e-5,
+    "poisson_q": 0.12
+  },
+  "crypto": {
+    "enabled": true,
+    "identity_signature": "Ed25519_RFC8032",
+    "key_agreement": "X25519_ECDH_RFC7748",
+    "kdf": "HKDF_SHA256",
+    "payload_cipher": "AES_256_CTR_NIST_SP800_38A",
+    "pairwise_ring": "Z_2^32",
+    "scheme": "Encrypt-then-Sign (ciphertext || round_id || sender_id)"
+  }
+}

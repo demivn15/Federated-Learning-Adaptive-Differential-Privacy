@@ -11,6 +11,7 @@ ENV/
 env/
 env.bak/
 venv.bak/
+.env
 
 # Datasets & Large Pretrained Models
 data/
@@ -18,6 +19,7 @@ data/
 *.pth
 *.pt
 *.onnx
+data/camelyon17_wilds/*.pt
 
 # Jupyter Notebook Checkpoints
 .ipynb_checkpoints

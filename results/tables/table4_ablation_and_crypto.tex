@@ -1,0 +1,21 @@
+\begin{table}[!t]
+\centering
+\caption{Experiment 4: Component Ablation ($\varepsilon=2.0$) and ResNet-18 (44 MB) Crypto Overhead.}
+\label{tab:exp4}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Ablation Variant} & \textbf{Conv. Round} & \textbf{AUROC} & \textbf{Sens.} & \textbf{DLG SSIM} \\
+\midrule
+1. Static C (1.0) + Static $\sigma$ & 6 & $0.943 \pm 0.050$ & $94.2\%$ & $0.245$ \\
+2. Dynamic $C_t$ + Static $\sigma$ & 3 & $0.957 \pm 0.032$ & $95.6\%$ & $0.138$ \\
+3. Static C (1.0) + Adaptive $\sigma$_t & 3 & $0.963 \pm 0.032$ & $95.1\%$ & $0.245$ \\
+4. Full Adaptive ($C_t$, $\sigma$_t) + Crypto P2P (Ours) & 1 & $0.965 \pm 0.028$ & $95.0\%$ & $0.028$ \\
+\midrule
+\multicolumn{5}{l}{\textbf{ResNet-18 (44.0 MB Payload) Per-Round P2P Cryptographic Latency ($K=5$):}} \\
+\multicolumn{3}{l}{X25519 ECDH + HKDF-SHA256 Handshake (RFC 7748)} & \multicolumn{2}{r}{$2.02\text{ ms}$} \\
+\multicolumn{3}{l}{AES-256-CTR Encryption + Decryption (NIST SP 800-38A)} & \multicolumn{2}{r}{$25.434\text{ ms}$} \\
+\multicolumn{3}{l}{Ed25519 Sign + Verify (RFC 8032)} & \multicolumn{2}{r}{$43.91\text{ ms}$} \\
+\multicolumn{3}{l}{\textbf{Total Cryptographic Overhead per Round (44 MB)}} & \multicolumn{2}{r}{$\mathbf{71.364\text{ ms}$} \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,18 @@
+{
+  "scenario_name": "HistoFed_Baseline_Cleartext",
+  "protocol": "project2-public-evaluation-v3",
+  "topology": "NEBULA_P2P_Decentralized",
+  "nodes": 5,
+  "dataset": "Camelyon17-WILDS-96x96x3",
+  "rounds": 25,
+  "dp": {
+    "enabled": false,
+    "mode": "none",
+    "epsilon": "inf",
+    "delta": 1e-5
+  },
+  "crypto": {
+    "enabled": false,
+    "transport": "cleartext"
+  }
+}
